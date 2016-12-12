@@ -104,6 +104,32 @@
   <embed height="100" width="100" src="小果 - 蒲公英的梦想.mp3" />
 
 </audio>
+<div class="box">
+		<div class="demo">
+			<a id="log" href="javascript:;" class="bounceInDown">登陆</a>
+		    <a href="http:www.baidu.com" >在线音乐</a>
+			<a href="#" >友情链接</a>
+			<a href="#" >关于我们</a>
+			<a href="#" >站长推荐</a>
+		</div>
+		
+		
+		<div id="dialogBg"></div>
+		<div id="dialog" class="animated">
+			<img class="dialogIco" width="50" height="50" src="image/ico12.png" alt="" />
+			<div class="dialogTop">
+				<a href="javascript:;" class="claseDialogBtn">关闭</a>
+			</div>
+			<form action="" method="post" id="editForm">
+				<ul class="editInfos">
+					<li><label><font color="#ff0000">* </font>昵称：<input type="text" name="" required value="" class="ipt" /></label></li>
+					<li><label><font color="#ff0000">* </font>QQ：<input type="text" name="" required value="" class="ipt" /></label></li>
+					<li><label><font color="#ff0000">* </font>笔名：<input type="text" name="" required value="" class="ipt" /></label></li>
+					<li><input type="submit" value="确认提交" class="submitBtn" /></li>
+				</ul>
+			</form>
+		</div>
+	</div>
     <a href="" class="btt">顶部</a>
     <!-- Js-->
     <script src="js/jquery-1.9.1.min.js"></script>
@@ -111,3 +137,34 @@
     <script src="js/plugin.js"></script>
   </body>
 </html>
+<script type="text/javascript">
+var w,h,className;
+function getSrceenWH(){
+	w = $(window).width();
+	h = $(window).height();
+	$('#dialogBg').width(w).height(h);
+}
+
+window.onresize = function(){  
+	getSrceenWH();
+}  
+$(window).resize();  
+
+$(function(){
+	getSrceenWH();
+	
+	//显示弹框
+	$('#log').click(function(){
+		className = $(this).attr('class');
+		$('#dialogBg').fadeIn(300);
+		$('#dialog').removeAttr('class').addClass('animated '+className+'').fadeIn();
+	});
+	
+	//关闭弹窗
+	$('.claseDialogBtn').click(function(){
+		$('#dialogBg').fadeOut(300,function(){
+			$('#dialog').addClass('bounceOutUp').fadeOut();
+		});
+	});
+});
+</script>
