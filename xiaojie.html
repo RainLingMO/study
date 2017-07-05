@@ -2,18 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>高洁的个人网页</title>
+<title>知晓天下事-魔镜</title>
 </head>
 
-<body>
-<div>
-<a id="q" href="#">小洁的隐私小屋</a>
-</div>
+<body width="100%">
+     <h2 style="text-align:center;">魔镜不说假话</h2>
+    <h4 style="text-align:center;">请输入名字：<input type="text" id="tall" style="width:180px;height:25px"/></h4>
+    <h3 style="text-align:center; margin-top:30px; "><button style="width:280px;height:50px;" id="shuo" >请魔镜说话</button></h3>
+
 </body>
 </html>
 <script>
-document.getElementById("q").onclick=function(){
-	alert("你权限不够，无法访问！")
-	}
+  document.getElementById("shuo").onclick=function(){
+	  var val="";
+	 val = document.getElementById("tall").value;
+	if(val=="小风"||val=="刘清风"){
+		alert("卧槽太好看了，排名no.2");
+	}else if(val=="程小航"||val=="陌雨翎"){
+		alert("世间绝无仅有，排名no.1");
+	}else{
+		var ugly = Math.floor(Math.random()*4000)+100160;
+		var paiming = "全国排名第"+ugly;
+	   alert(paiming);
+	} 
+  }
 
 </script>
